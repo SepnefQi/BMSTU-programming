@@ -1,0 +1,6 @@
+(define (day-of-week d m y)
+  (if (< m 3)
+      (set! y (- y 1))
+      y)
+  (let ((nad (list 0 3 2 5 0 3 5 1 4 6 2 4)) (y y) (m m) (d d))
+    (modulo (+ y (quotient y 4) (* (quotient y 100) -1) (quotient y 400) (list-ref nad (- m 1)) d) 7)))
